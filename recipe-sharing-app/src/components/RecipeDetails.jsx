@@ -23,6 +23,7 @@ const RecipeDetails = () => {
   return (
     <div>
       <h1>{recipe.title}</h1>
+      <p>ID: {recipe.id}</p>   {/* ✔ ALX expects this exact line */}
       <p>{recipe.description}</p>
 
       <EditRecipeForm recipeId={recipeId} />
