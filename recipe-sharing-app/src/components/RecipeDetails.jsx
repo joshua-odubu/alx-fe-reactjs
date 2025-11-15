@@ -11,6 +11,10 @@ const RecipeDetails = () => {
     state.recipes.find((r) => r.id === recipeId)
   );
 
+  const favorites = useRecipeStore((state) => state.favorites);
+  const addFavorite = useRecipeStore((state) => state.addFavorite);
+  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+
   if (!recipe) {
     return (
       <div>
@@ -20,11 +24,21 @@ const RecipeDetails = () => {
     );
   }
 
+  const isFavorite = favorites.includes(recipeId);
+
   return (
     <div>
       <h1>{recipe.title}</h1>
-      <p>ID: {recipe.id}</p>   {/* ✔ ALX expects this exact line */}
+      <p>ID: {recipe.id}</p>
       <p>{recipe.description}</p>
+
+      <button
+        onClick={() =>
+          isFavorite ? removeFavorite(recipeId) : addFavorite(recipeId)
+        }
+      >
+        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+      </button>
 
       <EditRecipeForm recipeId={recipeId} />
       <DeleteRecipeButton recipeId={recipeId} />
