@@ -7,7 +7,8 @@ function AddRecipeForm() {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e) => {
+  // validate form inputs
+    const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
