@@ -44,18 +44,20 @@ function RecipeDetail() {
         </ul>
       </section>
 
-      <section className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-4">Instructions</h2>
-        <ol className="list-decimal pl-6 text-gray-700 space-y-3">
-          {(recipe.steps || [
-            "Step one goes here.",
-            "Step two goes here.",
-            "Step three goes here.",
-          ]).map((step, index) => (
-            <li key={index}>{step}</li>
-          ))}
-        </ol>
-      </section>
+    <section className="bg-white p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-semibold mb-4">Instructions</h2>
+
+    {/* instructions section */}
+    <ol className="list-decimal pl-6 text-gray-700 space-y-3">
+        {(recipe.steps || [
+        "Step one goes here.",
+        "Step two goes here.",
+        "Step three goes here.",
+        ]).map((step, index) => (
+        <li key={index}>{step}</li>
+        ))}
+    </ol>
+    </section>
     </div>
   );
 }
