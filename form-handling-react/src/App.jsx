@@ -1,10 +1,13 @@
-import FormikForm from "./components/formikForm";
+import { QueryClient, QueryClientProvider } from "react-query";
+import PostsComponent from "./components/PostsComponent";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div>
-      <FormikForm />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <PostsComponent />
+    </QueryClientProvider>
   );
 }
 
