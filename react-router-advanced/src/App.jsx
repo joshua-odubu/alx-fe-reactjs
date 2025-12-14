@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const isAuthenticated = false;
 
   return (
     <BrowserRouter>
@@ -26,7 +25,7 @@ function App() {
           <Route
             path="/profile/*"
             element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute>
                 <Profile />
               </ProtectedRoute>
             }
